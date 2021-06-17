@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.e80a3d476f223ec4f3530d3c70c04306.js"
+  "/precache-manifest.7374a509cbba0a8405e92f392a7241d5.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "my-project"});
@@ -33,4 +33,4 @@ self.addEventListener('message', (event) => {
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerRoute(/^https:\/\/vpic.nhtsa.dot.gov\/api\/vehicles\/getallmanufacturers?format=json/, new workbox.strategies.NetworkFirst({ "cacheName":"api-cache","networkTimeoutSeconds":20, plugins: [new workbox.cacheableResponse.Plugin({ statuses: [ 0, 200 ] })] }), 'GET');
+workbox.routing.registerRoute("https://vpic.nhtsa.dot.gov/api/vehicles/getallmanufacturers?format=json", new workbox.strategies.NetworkFirst({ "networkTimeoutSeconds":5, plugins: [] }), 'GET');
